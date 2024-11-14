@@ -1,0 +1,58 @@
+Bước 1: Cài đặt các gói cần thiết
+- trên centos
+CSF yêu cầu có một số gói cài đặt trước khi có thể hoạt động. Hãy chắc chắn rằng hệ thống của bạn đã được cập nhật và đã cài đặt Perl trước khi tiếp tục.
+sudo yum update
+sudo yum install perl wget
+
+Bước 2: Tải xuống và cài đặt CSF
+Sau khi cài đặt các gói cần thiết, bạn có thể tải xuống và cài đặt CSF trên CentOS bằng lệnh wget.
+cd /usr/src
+sudo wget https://download.configserver.com/csf.tgz
+sudo tar -xzf csf.tgz
+cd csf
+sudo sh install.sh
+
+- trên ubuntu
+sudo apt update
+sudo apt install perl wget
+cd /usr/src
+sudo wget https://download.configserver.com/csf.tgz
+sudo tar -xzf csf.tgz
+cd csf
+sudo sh install.sh
+
+Bước 3: Cấu hình CSF
+copy 2 file csf.allow csf.conf zô vps (nếu nó ở /root thì dùng lệnh này)
+sudo cp -f /csf.allow /etc/csf/
+sudo cp -f /csf.conf /etc/csf/
+đường dẫn chứa các file cấu hình CSF /etc/csf/
+file csf.allow chứa danh sách ip được phép truy cập qua ip
+file csf.conf chứa cấu hình allow hoặc block port
+
+Bước 4: Khởi động CSF
+Cuối cùng, bạn hãy khởi động CSF và cho phép nó chạy khi hệ thống khởi động.
+sudo csf -r
+sudo systemctl enable csf
+sudo systemctl start csf
+
+nếu muốn dùng CSF và hủy hết tường lửa của nó thì dùng
+sudo csf -x
+kiểm tra trạng thái CSF
+sudo csf -s
+Để kích hoạt lại CSF và lfd, bạn có thể sử dụng lệnh sau:
+sudo csf -e
+
+
+block thêm dải ip censys
+162.142.125.0/24
+167.94.138.0/24
+167.94.145.0/24
+167.94.146.0/24
+167.248.133.0/24
+199.45.154.0/24
+199.45.155.0/24
+206.168.34.0/24
+2602:80d:1000:b0cc:e::/80
+2620:96:e000:b0cc:e::/80
+2602:80d:1003::/112
+2602:80d:1004::/112
