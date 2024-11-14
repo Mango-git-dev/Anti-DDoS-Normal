@@ -1,3 +1,4 @@
+- Đây là hệ thống chống check ip của sever bạn đang sử dụng.Nó có thể dùng để bảo vệ cho website,các sever cần thiết...
 - HDSD: 
 - git clone https://github.com/Mango-git-dev/Anti-Search_IP-CFS.git
 - cd Cấu hình CSF anti search IP
