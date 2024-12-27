@@ -2,6 +2,7 @@
 - HDSD:
 ```
 git clone https://github.com/Mango-git-dev/Anti-DDoS-Normal.git
+cd Anti-DDoS-Normal
 chmod +x anti.sh
 sh anti.sh
 
